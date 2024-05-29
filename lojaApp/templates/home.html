@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block titulo %}Produtos{% endblock %}
+{% block conteudo %}
+<section >
+    <div class="text-center container py-3">
+        <h1 class="mb-4"><strong>Produtos</strong></h1>
+
+        <div class="row">
+            {% for produto in produtos %}
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="card">
+                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+                        <img src="{{ produto.foto.url }}" class="img-fluid" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">{{ produto.nome }}</h5>
+                        <h6 class="card-price mb-3">R${{ produto.preco }}</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
